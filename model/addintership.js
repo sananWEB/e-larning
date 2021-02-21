@@ -1,0 +1,63 @@
+const mongo=require("mongoose");
+
+const addintership=mongo.Schema({
+    intershiptitle:{
+        type:String,
+        require:true
+    },
+    city:{
+        type:String,
+        require:true
+    },
+    accountID:{
+        type:String,
+        require:true
+    },
+    catogary:{
+        type:String,
+        require:true
+    },
+    Intershiptype:{
+        type:String,
+        require:true
+    },
+    timing:{
+        type:String,
+        require:true
+    },
+    salary:{
+        type:String,
+        require:true
+    },
+    gender:{
+        type:String,
+        require:true
+    },
+
+    position:{
+        type:String,
+        require:true
+    },
+    apply:{
+        type:String,
+        require:true
+    },
+    skills:{
+        type:String,
+        require:true
+    },
+    discription:{
+        type:String,
+        require:true
+    },
+
+    companyname:{
+        type:String,
+        require:true
+    },
+    img:{
+        type:String,
+        require:true
+    }
+})
+module.exports=mongo.model("addintership",addintership)
