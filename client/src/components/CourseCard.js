@@ -27,6 +27,8 @@ export default function CourseCard(props) {
   // const [dataa,setdataa ] = useState([])
 
 const url=useRouteMatch().url;
+
+
   const classes = useStyles();
   // useEffect(async()=>{
 

@@ -57,7 +57,7 @@ console.log(props.path)
 <Typography variant="body2" color="textSecondary"><b>Price:-{i.price}</b></Typography><br/>
 <div style={{display:"flex",justifyContent:"flex-end"}}>
 <Button 
-to={`${props.path}/${i._id}`} 
+to={`/courses/all/${i._id}`} 
 textAlign="center" component={Link} mt="4px" variant="contained" color="secondary" size="small">See More</Button>
 </div>
 </Paper>

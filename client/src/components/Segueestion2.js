@@ -54,7 +54,7 @@ padding:"10px",boxSizing:"border-box"}}>
 <Typography variant="body2" color="textSecondary">{i.companyname}</Typography><br/>
 <Typography variant="body2" color="textSecondary"><b>Skills:-</b>{i.skills }</Typography>
 <div style={{display:"flex",justifyContent:"flex-end"}}>
-<Button to={`${props.path}/${i._id}`} textAlign="center" component={Link} mt="10px" variant="contained" color="secondary" size="small">See More</Button>
+<Button to={`/interships/all/${i._id}`} textAlign="center" component={Link} mt="10px" variant="contained" color="secondary" size="small">See More</Button>
 </div>
 </Paper>
 </Grid>

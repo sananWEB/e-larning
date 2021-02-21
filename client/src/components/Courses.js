@@ -179,7 +179,7 @@ function Courses() {
         </Route>
 
 <Route exact path={`${path}/:id`}>
-<CoursePage  path={path}/>
+<CoursePage data={jobs} path={path}/>
 </Route>
                 </>
     )

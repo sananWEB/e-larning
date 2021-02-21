@@ -239,7 +239,7 @@ export default Jobs
 
 
 function Jobpage(props) {
-
+console.log(props.path)
 
   console.log(props.filtersearch)
   const jobid=useParams().id

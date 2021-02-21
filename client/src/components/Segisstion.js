@@ -1,6 +1,6 @@
 import React from 'react'
 import {Grid,Paper, Typography,Button,Box} from "@material-ui/core"
-import {Link, useRouteMatch,useHistory} from "react-router-dom"
+import {Link, useRouteMatch,useHistory,useParams} from "react-router-dom"
 function Segisstion(props) {
 
   console.log(props.path2)
@@ -37,7 +37,8 @@ function Segisstion(props) {
         return v<=2
    })
     
-    console.log(aynew)
+    console.log(props.path2)
+    console.log(useParams())
     
     return (
         <>
@@ -53,7 +54,9 @@ function Segisstion(props) {
 <Typography variant="body2" color="textSecondary">{i.companyname}</Typography><br/>
 <Typography variant="body2" color="textSecondary"><b>Skills:-</b>{i.skills }</Typography>
 <div style={{display:"flex",justifyContent:"flex-end"}}>
-<Button   component={Link} to={`${props.path2}/${i._id}`} textAlign="center" mt="10px" variant="contained" color="secondary" size="small">See More</Button>
+<Button  
+ component={Link} to={`/jobs/all/${i._id}`}
+ textAlign="center" mt="10px" variant="contained" color="secondary" size="small">See More</Button>
 </div>
 </Paper>
 </Grid>
