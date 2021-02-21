@@ -1,14 +1,14 @@
 import React,{useState,useContext} from 'react'
 import {Context} from "../App"
-import {Link as LLink,Hidden,Grid,MenuItem,TextField ,Select,Menu,Paper, Box,Container,makeStyles,AppBar ,Toolbar ,Avatar ,Typography ,Button,FormControl,InputLabel} from '@material-ui/core';
-import { BrowserRouter as Router, Switch, Route, Link,useHistory} from "react-router-dom";
+import {Link as LLink,Hidden,Grid,MenuItem,TextField ,Select,Menu,Paper, Box,Container,makeStyles,AppBar ,Toolbar ,Avatar ,Typography ,Button,FormControl} from '@material-ui/core';
+import { Link,useHistory} from "react-router-dom";
 
 import "./searchbar.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight,faSortDown } from '@fortawesome/free-solid-svg-icons'
-import {EmailIcon,FacebookIcon,LinkedinIcon, TwitterIcon,WhatsappIcon,} from "react-share";
+import {EmailIcon,FacebookIcon, TwitterIcon,WhatsappIcon,} from "react-share";
 import Mobilenav from "./mobilenav"
-import {Work,Home,HomeWork,LibraryBooks,Info} from "@material-ui/icons"
+
 const useStyles = makeStyles({
 toolbar:{
     display:"flex",

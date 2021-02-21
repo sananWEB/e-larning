@@ -1,8 +1,8 @@
 import React from 'react';
 import {Avatar,CardHeader,makeStyles,Card,CardActions,Grid,Button,Typography  } from '@material-ui/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faCalendarAlt,faBriefcase,faMoneyBillWave,faClock} from '@fortawesome/free-solid-svg-icons'
-import { BrowserRouter as Router, Switch,useRouteMatch, Route, Link as LLink} from "react-router-dom";
+import {faCalendarAlt,faBriefcase,faClock} from '@fortawesome/free-solid-svg-icons'
+import { useRouteMatch, Link as LLink} from "react-router-dom";
 const useStyles = makeStyles({
   root: {
     minWidth: 275,

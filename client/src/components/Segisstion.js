@@ -1,6 +1,6 @@
 import React from 'react'
-import {Grid,Paper, Typography,Button,Box} from "@material-ui/core"
-import {Link, useRouteMatch,useHistory,useParams} from "react-router-dom"
+import {Grid,Paper, Typography,Button,} from "@material-ui/core"
+import {Link,useParams} from "react-router-dom"
 function Segisstion(props) {
 
   console.log(props.path2)

@@ -10,13 +10,10 @@ import ListItem from '@material-ui/core/ListItem';
 import {Typography,Box} from '@material-ui/core';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faBars } from '@fortawesome/free-solid-svg-icons'
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-import StarBorder from '@material-ui/icons/StarBorder';
 import Collapse from '@material-ui/core/Collapse';
 import {Avatar} from "@material-ui/core"
 import {Work,HomeWork,Create,DesktopWindows,Label,MultilineChart,Code,DeveloperMode,LibraryBooks,PersonAdd,AccountCircle,ContactMail,Info,VpnKey} from "@material-ui/icons"

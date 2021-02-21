@@ -2,10 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import {BottomNavigationAction,Hidden} from '@material-ui/core';
-import RestoreIcon from '@material-ui/icons/Restore';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
-import {Work,Home,HomeWork,LibraryBooks,Info} from "@material-ui/icons"
+import {Work,Home,HomeWork,LibraryBooks} from "@material-ui/icons"
 import {Link} from "react-router-dom"
 const useStyles = makeStyles((theme)=>(
     {

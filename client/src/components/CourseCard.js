@@ -1,16 +1,14 @@
-import React,{useEffect,useState} from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-import axios from "axios"
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { BrowserRouter as Router, Switch,useRouteMatch,useParams, Route, Link as LLink} from "react-router-dom";
+import { useRouteMatch,Link as LLink} from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {

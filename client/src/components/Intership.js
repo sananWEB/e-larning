@@ -1,12 +1,11 @@
 import React,{useEffect,useState} from 'react'
 import {Navbar,Search} from "./Home"
-import Filters from "./Filters"
 import axios from "axios"
 import Segisstion2 from "./Segueestion2"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faCalendarAlt,faBriefcase,faMoneyBillWave,faClock} from '@fortawesome/free-solid-svg-icons'
-import {Link,FormControl,Box,InputLabel,Select,Breadcrumbs,Grid,Avatar,Paper,Typography,Container, Button } from '@material-ui/core';
-import { BrowserRouter as Router, useParams,Switch,useRouteMatch, Route, Link as LLink} from "react-router-dom";
+import {faCalendarAlt,faBriefcase,faMoneyBillWave} from '@fortawesome/free-solid-svg-icons'
+import {FormControl,InputLabel,Select,Breadcrumbs,Grid,Avatar,Paper,Typography,Container, Button } from '@material-ui/core';
+import { useParams,useRouteMatch, Route, Link as LLink} from "react-router-dom";
 import IntershipsCards from "./IntershipsCards"
 
 function Breadcrumb(){

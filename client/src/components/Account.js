@@ -1,5 +1,5 @@
 import React,{useContext,useEffect, useState} from 'react'
-import {BrowserRouter as Router,Route, Switch, useHistory,useRouteMatch,Link as LLink, useParams} from "react-router-dom"
+import {Route, useHistory,useRouteMatch,Link as LLink, useParams} from "react-router-dom"
 import {Context} from "../App"
 import {Navbar} from "./Home"
 import MuiAlert from '@material-ui/lab/Alert';

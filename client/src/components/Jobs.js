@@ -1,12 +1,12 @@
-import React,{useEffect,useState,useContext} from 'react'
+import React,{useEffect,useState} from 'react'
 import {Navbar,Search} from "./Home"
 // import Filters from "./Filters"
-import { BrowserRouter as Router, Switch,useRouteMatch,useParams, Route, Link as LLink} from "react-router-dom";
-import {Link,FormControl,Box,InputLabel,Select,Breadcrumbs,Grid,Avatar,Paper,Typography,Container, Button } from '@material-ui/core';
+import {useRouteMatch,useParams, Route, Link as LLink} from "react-router-dom";
+import {FormControl,InputLabel,Select,Breadcrumbs,Grid,Avatar,Paper,Typography,Container, Button } from '@material-ui/core';
 import Ccard from "./Cards"
 import axios from "axios"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faCalendarAlt,faBriefcase,faMoneyBillWave,faClock} from '@fortawesome/free-solid-svg-icons'
+import {faCalendarAlt,faBriefcase,faMoneyBillWave} from '@fortawesome/free-solid-svg-icons'
 import Segisstion from "./Segisstion"
 
 function Breadcrumb(){
