@@ -8,7 +8,7 @@ import axios from "axios"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faCalendarAlt,faBriefcase,faMoneyBillWave} from '@fortawesome/free-solid-svg-icons'
 import Segisstion from "./Segisstion"
-
+import {Dialog,DialogActions ,DialogContent ,DialogContentText ,DialogTitle} from "@material-ui/core"
 function Breadcrumb(){
 
 
@@ -239,9 +239,9 @@ export default Jobs
 
 
 function Jobpage(props) {
-console.log(props.path)
+//console.log(props.path)
 
-  console.log(props.filtersearch)
+  //console.log(props.filtersearch)
   const jobid=useParams().id
     const arry=props.data;
 
@@ -278,9 +278,54 @@ useEffect(()=>{
   })
 
 
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  
+
+  const [btn1, setbtn1] = React.useState(true);
+  const [cvfile, setcvfile] = React.useState();
+  
+  const pdffile=(e)=>{
+   
+
+if(e.target.files[0].type=="application/pdf"){
+console.log("pdf");
+setcvfile(e.target.files[0])
+setbtn1(false)
+}else{
+  console.log("not pdf")
+  setbtn1(true)
+}
 
 
+  }
 
+  const handleClose = () => {
+ 
+    const formData = new FormData();
+
+    formData.append("v1",jobdata.jobtitle)
+    formData.append("v2",jobdata.companyname)
+    formData.append("v3",cvfile)
+
+   
+      axios.post("/getcv",formData)
+     console.log(jobdata)
+     console.log(cvfile)
+    setbtn1(false)
+    setOpen(false);
+    
+  };
+
+  const handleClose1 = () => {
+
+  
+   setOpen(false);
+ };
 
   return (
     <>
@@ -337,7 +382,7 @@ useEffect(()=>{
 <br/>
 <br/>
 <div style={{display:"flex",justifyContent:"flex-end"}}>
-<Button variant="contained" color="secondary">Apply Now</Button>
+<Button onClick={handleClickOpen} variant="contained" color="secondary">Apply Now</Button>
 </div>
 </Paper>
 
@@ -352,6 +397,31 @@ useEffect(()=>{
 </Grid>
         </Typography>
       </Container>
+
+
+
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">{"Submit Your CV"}</DialogTitle>
+        <DialogContent>
+          <input type="file" name="CV" onChange={pdffile}/>
+          <Typography style={{marginTop:"10px"}} variant="subtitle2" color="textPrimary">CV must be in PDF format</Typography>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose1} variant="contained" color="primary">
+            Disagree
+          </Button>
+          <Button  disabled={btn1} onClick={handleClose} variant="contained" color="secondary" autoFocus>
+            Agree
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+
     </>
   )
 }
@@ -367,6 +437,11 @@ function Breadcrumb2(props){
   </Breadcrumbs> 
   )
 }
+
+
+
+
+
 
 
 

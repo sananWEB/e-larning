@@ -3,7 +3,7 @@ import {Grid,Paper, Typography,Button,} from "@material-ui/core"
 import {Link,useParams} from "react-router-dom"
 function Segisstion(props) {
 
-  console.log(props.path2)
+ // console.log(props.path2)
 
     function shuffle(array) {
         var currentIndex = array.length, temporaryValue, randomIndex;
@@ -37,8 +37,8 @@ function Segisstion(props) {
         return v<=2
    })
     
-    console.log(props.path2)
-    console.log(useParams())
+    //console.log(props.path2)
+    //console.log(useParams())
     
     return (
         <>

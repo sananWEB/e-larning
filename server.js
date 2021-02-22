@@ -4,7 +4,8 @@ const upload=require("./multer")
 const express=require("express")
 require("./mongo")
 require("./cloudinary")
-
+const nodemiler=require("nodemailer")
+require("dotenv").config();
 const addcourse=require("./model/addcourse")
 const jwt=require("jsonwebtoken")
 const cloudinary=require("cloudinary")
@@ -32,7 +33,8 @@ app.use(function (req, res, next) {
 
 
   app.post("/signup",upload.single("file"),async(req,res)=>{
-console.log(req.body.CompanyName)
+console.log(req.body)
+console.log(req.file)
     const data1= await signupmodel.find({email:req.body.email});
    if(req.body.CompanyName=="" || req.body.email=="" || req.body.password=="" || req.body.cpassword==""){ 
       return res.send({msg:"Please Fill The Field",msgscreen:"error"})
@@ -404,5 +406,90 @@ app.post("/deletecourse",async(req,res)=>{
 
   await addcourse.findByIdAndDelete({_id:req.body.id})
 })
+
+
+app.post("/getcv",upload.single("v3"), async(req,res)=>{
+
+const email= await signupmodel.find({companyname:req.body.v2})
+console.log(email[0].email)
+
+
+
+
+let trans=nodemiler.createTransport({
+  service:"gmail",
+  secure: true,
+  port: 587,
+  auth:{
+      user:"finalyearprojectsh@gmail.com",
+      pass:"KHANKHAN123"
+  }
+}) 
+//step2
+let mailOptions={
+ from:"finalyearprojectsh@gmail.com",
+  to:email[0].email, 
+  subject:req.body.v1,
+  text:`JOBS:-${req.body.v1}`,
+  attachments:[{filename:req.file.originalname,path:req.file.path}]
+};
+
+//step 3
+
+trans.sendMail(mailOptions,(err)=>{
+  if(err){
+      console.log("something is wrong email does not send !",err)
+  }
+  else{
+      console.log(" Email Send!!!!!")
+  }
+});
+
+  
+})
+
+
+
+app.post("/getcvInter",upload.single("v3"), async(req,res)=>{
+
+  const email= await signupmodel.find({companyname:req.body.v2})
+  console.log(email[0].email)
+  
+  
+  
+  
+  let trans=nodemiler.createTransport({
+    service:"gmail",
+    secure: true,
+    port: 587,
+    auth:{
+        user:"finalyearprojectsh@gmail.com",
+        pass:"KHANKHAN123"
+    }
+  }) 
+  //step2
+  let mailOptions={
+   from:"finalyearprojectsh@gmail.com",
+    to:email[0].email, 
+    subject:req.body.v1,
+    text:`intershiptitle:-${req.body.v1}`,
+    attachments:[{filename:req.file.originalname,path:req.file.path}]
+  };
+  
+  //step 3
+  
+  trans.sendMail(mailOptions,(err)=>{
+    if(err){
+        console.log("something is wrong email does not send !",err)
+    }
+    else{
+        console.log(" Email Send!!!!!")
+    }
+  });
+  
+    
+  })
+  
+
 
   app.listen( process.env.PORT||5000,()=>{console.log("server is ON!")})
