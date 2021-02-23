@@ -133,7 +133,7 @@ export function Navbar() {
             {/* ....................navbar.....................  */}
         <AppBar position="static">
           <Toolbar className={classes.toolbar}>
-              <Typography component={Link} to="/" variant="h5" style={{color:"white",fontWeight:"bold",textDecoration:"none"}}>LOGO</Typography>
+              <Typography component={Link} to="/" variant="h5" style={{color:"white",fontWeight:"bold",textDecoration:"none"}}>GETSKILL</Typography>
 <Hidden only={["xs","sm"]}>
               <ul className={classes.list}>
    <li><LLink onClick={handleClick} style={{textDecoration:"none",cursor:"pointer"}} color="inherit">JOBS &nbsp;<FontAwesomeIcon style={{paddingBottom:"3px"}} icon={faSortDown}/></LLink></li>
@@ -429,12 +429,11 @@ export function Cards() {
 <Grid container component={Box} p={1}>
 
   <Grid item xs={12} sm={6} md={4}>
-  <Box  fontWeight="700"  fontSize="h4.fontSize">LOGO</Box>
+  <Box  fontWeight="700" textAlign="center" fontSize="h4.fontSize">GETSKILL</Box>
   </Grid>
 
   <Grid item xs={12} sm={6} md={4}>
-  <Box  textAlign="center" fontSize="body1.fontSize">© 2020 Indeed
-Accessibility at Indeed
+  <Box  textAlign="center" fontSize="body1.fontSize">© 2021 Copyrights Getskill
 </Box>
   </Grid>
 

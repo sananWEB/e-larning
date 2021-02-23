@@ -221,6 +221,14 @@ function CoursePage(props) {
       
       })
     
+      
+      const [email, setemail] = useState("")
+      useEffect(async()=>{
+
+        
+        await axios.post("/numbercourse",{cname:jobdata.companyname}).then((res)=>{setemail(res.data)})
+      },[])
+    
     return (
         <React.Fragment>
         <Breadcrumb2 id={jobdata.coursetitle}/>
@@ -256,7 +264,7 @@ function CoursePage(props) {
           <Typography varient="body1"><b>Class Timing:-</b></Typography>
           <Typography variant="body2">{jobdata.timing}</Typography><br/>
           <div style={{display:"flex",justifyContent:"flex-end"}}>
-              <Button variant="contained" color="secondary">Contact</Button>
+              <Button  href={`mailto:${email}`} variant="contained" color="secondary">Contact</Button>
           </div>
           
 

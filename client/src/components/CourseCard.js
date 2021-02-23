@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles,CircularProgress } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -38,7 +38,9 @@ const url=useRouteMatch().url;
   return (
       <>
       <Grid container spacing={2}>
-{props.data.map((i)=>
+
+      {props.data.length>0?
+props.data.map((i)=>
 
 <Grid item xs={12} md={4}>
 <Card className={classes.root}>
@@ -83,7 +85,14 @@ Learn More
 
 </Grid>
 
- )} 
+ ):
+ <div style={{display:"flex",justifyContent:"center",width:"100%"}}>
+   <br/>
+<CircularProgress color="primary" />
+
+ </div>
+}
+  
       </Grid>
       <br/>
       </>

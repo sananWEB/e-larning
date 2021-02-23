@@ -490,6 +490,15 @@ app.post("/getcvInter",upload.single("v3"), async(req,res)=>{
     
   })
   
+  app.post("/numbercourse",async(req,res)=>{
+
+    
+
+    const email= await signupmodel.find({companyname:req.body.cname})
+
+    res.send(email[0].email)
+
+  })
 
 
   app.listen( process.env.PORT||5000,()=>{console.log("server is ON!")})

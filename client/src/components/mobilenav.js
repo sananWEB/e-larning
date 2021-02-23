@@ -72,7 +72,7 @@ const history=useHistory();
     // onKeyDown={()=>{setOpen(!open)}}
    
     >
- <Typography variant="h5" style={{fontWeight:"bold",textAlign:"center",padding:"10px 0px 10px 0px"}}>LOGO</Typography>
+ <Typography variant="h5" style={{fontWeight:"bold",textAlign:"center",padding:"10px 0px 10px 0px"}}>GETSKILL</Typography>
         <Divider/>
         {userdata.login==true && localStorage.getItem("Ltoken")?
         <Box m={2}>

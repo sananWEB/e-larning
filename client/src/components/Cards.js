@@ -1,5 +1,5 @@
 import React from 'react';
-import {Avatar,CardHeader,makeStyles,Card,CardActions,Grid,Button,Typography  } from '@material-ui/core';
+import {Avatar,CardHeader,Box,CircularProgress,makeStyles,Card,CardActions,Grid,Button,Typography  } from '@material-ui/core';
 import {useRouteMatch, Link as LLink} from "react-router-dom";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -35,8 +35,10 @@ const url=useRouteMatch().url;
       <Grid container spacing={2}>
           
 
-          
-    {props.data.map((i)=>
+      {props.data.length>0?
+      props.data.map((i)=>
+
+   
         <Grid item xs={12} sm={6} md={4} >
 <Card  className={classes.root}>
 <CardHeader
@@ -69,8 +71,22 @@ subheader={`${i.companyname} ${i.city}`}
 
 </Card>
 </Grid>
+
       
-    )}
+    ):
+   <div style={{display:"flex",justifyContent:"center",width:"100%"}}>
+     <br/>
+<CircularProgress color="primary" />
+
+   </div>
+    
+    
+
+    
+    
+   
+    }
+    
     </Grid>
     <br/>
 
